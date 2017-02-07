@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title of the document</title>
+        <link href="styles.css" type="text/css" rel="stylesheet" media="screen,projection" />
+        <!-- Compiled and minified CSS -->
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
+          <!-- Compiled and minified JavaScript -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    </head>
+
+
+    <body>
+        <div class="fullscreen-bg">
+            <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video" id="VID">
+                <source src="videos/rain.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!--MAIN BANNER-->
+    	<div class="welcome">
+            <div class="message">
+                <h1>Change The Weather!</h1>
+                <button class="waves-effect waves-light btn" onclick="clouds()">Clouds</button>
+                <button class="waves-effect waves-light btn" onclick="snow()">Snow</button>
+                <button class="waves-effect waves-light btn" onclick="beach()">Beach</button>
+                <button class="waves-effect waves-light btn" onclick="rain()">Rain</button>
+            </div>
+    	</div>
+    	<!--END MAIN BANNER-->
+
+        <script>
+            function clouds() {
+                document.getElementById("VID").src = "videos/clouds.mp4";
+            }
+            function snow() {
+                document.getElementById("VID").src = "videos/snow.mp4";
+            }
+            function beach() {
+                document.getElementById("VID").src = "videos/beach.mp4";
+            }
+            function rain() {
+                document.getElementById("VID").src = "videos/rain.mp4";
+            }
+        </script>
+    </body>
+</html>
