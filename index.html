@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Title of the document</title>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <link href="styles.css" type="text/css" rel="stylesheet" media="screen,projection" />
         <!-- Compiled and minified CSS -->
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
@@ -22,11 +23,18 @@
         <!--MAIN BANNER-->
     	<div class="welcome">
             <div class="message">
-                <h1>Change The Weather!</h1>
+                <h1>Mood-Detector</h1>
+                <h3> Talk to me, and I'll tell you how you're feeling</h3>
+                <form>
+                <input id="emotionalText" type="text" placeholder="Tell me about your day, your darkest secret. OR paste a Tweet from an infamous politician.">
+                <input type="submit" id="getEmotion" value="&#x2714;">
+                </form>
+                <!--
                 <button class="waves-effect waves-light btn" onclick="clouds()">Clouds</button>
                 <button class="waves-effect waves-light btn" onclick="snow()">Snow</button>
                 <button class="waves-effect waves-light btn" onclick="beach()">Beach</button>
                 <button class="waves-effect waves-light btn" onclick="rain()">Rain</button>
+                -->
             </div>
     	</div>
     	<!--END MAIN BANNER-->
@@ -45,5 +53,6 @@
                 document.getElementById("VID").src = "videos/rain.mp4";
             }
         </script>
+        <script src="sentiment.js"></script>
     </body>
 </html>
