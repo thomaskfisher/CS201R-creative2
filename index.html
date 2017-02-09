@@ -22,11 +22,11 @@
 
         <!--MAIN BANNER-->
     	<div class="welcome">
-            <div class="message">
+            <div class="message" id="input-box">
                 <h1>Mood-Detector</h1>
                 <h3> Talk to me, and I'll tell you how you're feeling</h3>
                 <form>
-                <input id="emotionalText" type="text" placeholder="Tell me about your day, your darkest secret. OR paste a Tweet from an infamous politician.">
+                <input id="emotionalText" type="text" placeholder="Tell me about your day, your darkest secret, OR paste a Tweet from an infamous politician.">
                 <input type="submit" id="getEmotion" value="&#x2714;">
                 </form>
                 <!--
@@ -36,9 +36,22 @@
                 <button class="waves-effect waves-light btn" onclick="rain()">Rain</button>
                 -->
             </div>
+            <!-- This stuff is the loader, hidden unless ajax is running -->
+            <div class="message cssload-jar">
+                <div class="cssload-mouth"></div>
+                <div class="cssload-neck"></div>
+                <div class="cssload-base">
+                    <div class="cssload-liquid"> </div>
+                    <div class="cssload-wave"></div>
+                    <div class="cssload-wave"></div>
+                    <div class="cssload-bubble"></div>
+                    <div class="cssload-bubble"></div>
+                </div>
+                <div class="cssload-bubble"></div>
+                <div class="cssload-bubble"></div>
+            </div>
     	</div>
     	<!--END MAIN BANNER-->
-
         <script>
             function clouds() {
                 document.getElementById("VID").src = "videos/clouds.mp4";

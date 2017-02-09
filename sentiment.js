@@ -3,6 +3,18 @@ function getEmotion() {
 	document.getElementById("VID").src = "videos/clouds.mp4";
 }
 
+$(document).ready(function () {
+	$(".cssload-jar").hide();
+    $(document).ajaxStart(function () {
+        $("#input-box").hide();
+		$(".cssload-jar").show();
+	});
+	$(document).ajaxStop(function() {
+        $("#input-box").show();
+		$(".cssload-jar").hide();
+	});
+});
+
 $("#getEmotion").click(function(e){
 	e.preventDefault();
 	var value = $("#emotionalText").val();
@@ -38,3 +50,4 @@ $("#getEmotion").click(function(e){
 		}
 	 });
 });
+
