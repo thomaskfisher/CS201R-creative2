@@ -1,8 +1,6 @@
 // JavaScript Document, uses jquery
-function getEmotion() {
-	document.getElementById("VID").src = "videos/clouds.mp4";
-}
 
+//switch between loading, user-input, and result windows
 $(document).ready(function () {
 	$(".cssload-jar").hide();
 	$("#result").hide();
@@ -16,6 +14,10 @@ $(document).ready(function () {
 	});
 });
 
+/** 
+  * This function sends the user input to the IBM Watson API, then 
+  * generates a video background and text based on Watson's response.
+  */
 $("#getEmotion").click(function(e){
 	e.preventDefault();
 	var value = $("#emotionalText").val();
@@ -32,7 +34,6 @@ $("#getEmotion").click(function(e){
 		dataType : "json",
 		success : function(data)
 		{
-			alert("it's working!");
 			console.log(data);
 			//the values for each parameter are 0 to 1
 			var emotions = data['document_tone']['tone_categories'][0]['tones'];
@@ -43,12 +44,15 @@ $("#getEmotion").click(function(e){
 			var	sadness = emotions[4]['score'];
 			
 			var languageTones = data['document_tone']['tone_categories'][1];
-			//there is: analytical, confident, tentativ
+			//there is: analytical, confident, tentative
+			
 			var socialTones = data['document_tone']['tone_categories'][2];
 			//there is: openness, conscienciousness, extraversion, agreeable, emotional range,
 			//you can also pick apart each sentence of the input, just get size of "sentence_tone" array first.
+			
+			//pick the highest one
 			var highest = 0.0;
-			var emotion = "n";
+			var emotion = "";
 			var description = "";
 			if (anger > highest) {
 				highest = anger;
@@ -80,7 +84,7 @@ $("#getEmotion").click(function(e){
 			if (emotion != "fear") {
 			var everything = "<p>You appear to have " + emotion + ". <a href=\"https://tone-analyzer-demo.mybluemix.net/#Document-level\">IBM Watson</a> told us. Watson has a Sentiment Analyzer, which processes the emotions associated with the words you use, the grammar of your sentences, and other semantic features to decide which emotion you are feeling.</p>" + "<p>" + description + "</p>";
 			}
-			else {
+			else {			// if it's fear. Mess with their heads
 				var everything = description;
 			}
 			$("#result").html(everything);
