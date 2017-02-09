@@ -15,8 +15,8 @@
 
     <body>
         <div class="fullscreen-bg">
-            <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video" id="VID">
-                <source src="videos/rain.mp4" type="video/mp4">
+            <video loop muted autoplay poster="videos/Bangkok-Traffic.jpg" class="fullscreen-bg__video" id="VID">
+                <source src="videos/Bangkok-Traffic.mp4" type="video/mp4">
             </video>
         </div>
 
@@ -50,23 +50,21 @@
                 <div class="cssload-bubble"></div>
                 <div class="cssload-bubble"></div>
             </div>
+            <div id="result" class="message"></div>
     	</div>
     	<!--END MAIN BANNER-->
         <script>
-            function anger() {
-                document.getElementById("VID").src = "videos/anger.mp4";
+            function clouds() {
+                document.getElementById("VID").src = "videos/clouds.mp4";
             }
-            function disgust() {
-                document.getElementById("VID").src = "videos/disgust.mp4";
+            function snow() {
+                document.getElementById("VID").src = "videos/snow.mp4";
             }
-            function fear() {
-                document.getElementById("VID").src = "videos/fear.mp4";
+            function beach() {
+                document.getElementById("VID").src = "videos/beach.mp4";
             }
-            function joy() {
-                document.getElementById("VID").src = "videos/joy.mp4";
-            }
-            function sadness() {
-                document.getElementById("VID").src = "videos/sadness.mp4";
+            function rain() {
+                document.getElementById("VID").src = "videos/rain.mp4";
             }
         </script>
         <script src="sentiment.js"></script>
